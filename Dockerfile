@@ -1,0 +1,9 @@
+FROM debian:buster
+
+RUN apt-get update
+
+RUN apt-get install -y vim apache2
+
+EXPOSE 80
+
+ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
